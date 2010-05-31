@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JAR>
+  <VERSION>0.1</VERSION>
+  <BUILD_NO>Build 0018</BUILD_NO>
+  <ARCHIVE_NAME>VuzeLegendasBaixator.jar</ARCHIVE_NAME>
+  <MASTER_BUILD_NO />
+  <MODULE_BUILD_NO>build.number</MODULE_BUILD_NO>
+  <ANT_SCRIPT_FILE />
+  <ARCHIVE_DIRECTORY>D:/Develop/legendasbaixator</ARCHIVE_DIRECTORY>
+  <MAIN_CLASS />
+  <BUILD_SOURCE>NO</BUILD_SOURCE>
+  <SINGLE_SOURCE>NO</SINGLE_SOURCE>
+  <BUILD_BEFORE_ARCHIVING>NO</BUILD_BEFORE_ARCHIVING>
+  <SOURCE_DIR>D:/Develop/legendasbaixator</SOURCE_DIR>
+  <SOURCE_NAME>VuzeLegendasBaixator-src.jar</SOURCE_NAME>
+  <INCLUDE_ALL_PROJECT_RESOURCE>NO</INCLUDE_ALL_PROJECT_RESOURCE>
+  <SIGNED_LIBRARY_PATH />
+  <CLASSES>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Hash\OpenSubtitlesHasher.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Hash\SubDBHasher.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\LegendasTVHandler$1.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\LegendasTVHandler.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\OpenSubtitlesOrgHandler$1.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\OpenSubtitlesOrgHandler.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\SubDBHandler$1.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\SubDBHandler.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Interface\IDownloadHandler.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Manager\ConfigManager$1.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Manager\ConfigManager.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Manager\Core.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Manager\DownloadManager.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Manager\LogManager.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Manager\TorrentListener.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Messages\Messages.properties</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Messages\Messages_pt_BR.properties</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Model\Description.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Model\DownloadHandlerException.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Model\DownloadHandlerVO.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Model\MovieFileVO.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Model\SubTitleLanguage.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Model\SubTitleVO.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Threads\BaseThread.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Threads\DownloadAllThread.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Threads\DownloadThread.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$1.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$2.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$MovieExtensions.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$SubTitleExtensions.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\TorrentUtils.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\sevenZipByteInputStream.class</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\plugin.properties</ELEMENT>
+  </CLASSES>
+  <LIBRARIES>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\log4j-1.2.15.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\xmlrpc-server-3.1.3.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\commons-codec-1.3.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\httpcore-4.0-beta3.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\httpclient-4.0-beta2.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\httpmime-4.0-beta2.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\xmlrpc-client-3.1.3.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\apache-mime4j-0.5.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\ws-commons-util-1.0.2.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\lambdaj-2.1-with-dependencies.jar</ELEMENT>
+    <ELEMENT SIGNED="false">$PROJECT_DIR$\Lib\xmlrpc-common-3.1.3.jar</ELEMENT>
+  </LIBRARIES>
+  <SOURCES />
+  <RESOURCES />
+  <DIRECTORIES>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Hash</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Interface</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Manager</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Messages</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Model</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Threads</ELEMENT>
+    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils</ELEMENT>
+  </DIRECTORIES>
+  <MANIFEST>
+    <ELEMENT KEY="Manifest-Version" VALUE="0.1" />
+    <ELEMENT KEY="Main-Class" VALUE="" />
+  </MANIFEST>
+</JAR>
+
