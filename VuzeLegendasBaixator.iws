@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="4b898505-7e9c-4260-b03b-0142eba86139" name="Default" comment="" />
-    <ignored path="VuzeLegendasBaixator.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="VuzeLegendasBaixator.iws" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,19 +29,6 @@
   <component name="DebuggerManager">
     <line_breakpoints>
       <breakpoint url="file://$PROJECT_DIR$/src/Manager/ConfigManager.java" line="2" class="Class at ConfigManager.java:2" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/Implementation/OpenSubtitlesOrgHandler.java" line="276" class="Implementation.OpenSubtitlesOrgHandler" package="Implementation">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -96,43 +83,18 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OpenSubtitlesOrgHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Implementation/OpenSubtitlesOrgHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="275" column="25" selection-start="10394" selection-end="10394" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#getCodeLanguage#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
-                <element signature="method#getSupportedLanguages#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VuzeLegendasBaixator.jarprj" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="VuzeLegendasBaixator.jarprj" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/archive_projects/VuzeLegendasBaixator.jarprj">
           <provider selected="true" editor-type-id="jarprj">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Manager/ConfigManager.java">
+      <file leaf-file-name="LogManager.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Manager/LogManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="45" selection-start="6065" selection-end="6065" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubDBHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Implementation/SubDBHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="45" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="39" column="34" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.42124543">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,22 +109,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/VuzeLegendasBaixator.iml" />
         <option value="$PROJECT_DIR$/VuzeLegendasBaixator.iws" />
-        <option value="$PROJECT_DIR$/src/Manager/Core.java" />
-        <option value="$PROJECT_DIR$/src/Model/SubTitleLanguage.java" />
         <option value="$PROJECT_DIR$/src/Model/Description.java" />
         <option value="$PROJECT_DIR$/VuzeLegendasBaixator.ipr" />
         <option value="$PROJECT_DIR$/src/plugin.properties" />
         <option value="$PROJECT_DIR$/src/Implementation/LegendasTVHandler.java" />
-        <option value="$PROJECT_DIR$/src/Implementation/OpenSubtitlesOrgHandler.java" />
-        <option value="$PROJECT_DIR$/src/Manager/LogManager.java" />
-        <option value="$PROJECT_DIR$/src/Manager/DownloadManager.java" />
-        <option value="$PROJECT_DIR$/src/Implementation/SubDBHandler.java" />
-        <option value="$PROJECT_DIR$/src/Messages/Messages_pt_BR.properties" />
-        <option value="$PROJECT_DIR$/src/Messages/Messages.properties" />
-        <option value="$PROJECT_DIR$/src/Utils/FileUtils.java" />
         <option value="$PROJECT_DIR$/src/Manager/ConfigManager.java" />
+        <option value="$PROJECT_DIR$/src/Hash/SubDBHasher.java" />
+        <option value="$PROJECT_DIR$/src/Utils/FileUtils.java" />
+        <option value="$PROJECT_DIR$/src/Model/SubTitleLanguage.java" />
+        <option value="$PROJECT_DIR$/src/Implementation/OpenSubtitlesOrgHandler.java" />
+        <option value="$PROJECT_DIR$/src/Messages/Messages.properties" />
+        <option value="$PROJECT_DIR$/src/Messages/Messages_pt_BR.properties" />
+        <option value="$PROJECT_DIR$/src/Manager/DownloadManager.java" />
+        <option value="$PROJECT_DIR$/src/Manager/Core.java" />
+        <option value="$PROJECT_DIR$/src/Implementation/SubDBHandler.java" />
+        <option value="$PROJECT_DIR$/src/Manager/LogManager.java" />
       </list>
     </option>
   </component>
@@ -420,6 +382,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VuzeLegendasBaixator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="legendasbaixator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Interface" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -442,12 +422,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VuzeLegendasBaixator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="legendasbaixator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
       <pane id="Scope">
         <subPane subId="Problems" />
       </pane>
+      <pane id="Favorites" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -729,18 +727,18 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32690126" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39614075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39500567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950467" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32690126" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32576618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39985642" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23270056" sideWeight="0.6651532" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23208818" sideWeight="0.6662883" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32732317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32690126" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -799,98 +797,101 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/VuzeLegendasBaixator.iml">
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.6.0_18/src.zip!/java/security/MessageDigest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="366" column="18" selection-start="12553" selection-end="12553" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VuzeLegendasBaixator.ipr">
+    <entry file="file://$PROJECT_DIR$/src/Hash/SubDBHasher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="52" selection-start="4242" selection-end="4242" vertical-scroll-proportion="0.5873786" />
+        <state line="28" column="41" selection-start="777" selection-end="777" vertical-scroll-proportion="0.252">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Description.java">
+    <entry file="file://$PROJECT_DIR$/src/Utils/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="311" selection-end="311" vertical-scroll-proportion="0.23859648" />
+        <state line="101" column="48" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.7587629">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/TorrentUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="570" selection-end="570" vertical-scroll-proportion="0.01988304">
+        <state line="33" column="24" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.524">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Messages/Messages_pt_BR.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/Model/SubTitleLanguage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="59" selection-start="1284" selection-end="1284" vertical-scroll-proportion="-14.315789">
-          <folding />
+        <state line="71" column="31" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.15906432">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="964" selection-end="1040" vertical-scroll-proportion="0.26435408">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="ResourceBundle">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Messages/Messages_pt_BR.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="65" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.34569377">
+        <state line="12" column="79" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.24401914">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Threads/DownloadAllThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="530" selection-end="530" vertical-scroll-proportion="0.646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/AzureusLib/Vuze_4404.jar!/org/gudy/azureus2/pluginsimpl/local/utils/LocaleUtilitiesImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="28" selection-start="924" selection-end="924" vertical-scroll-proportion="0.354">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Implementation/SubDBHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="45" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="106" selection-end="106" vertical-scroll-proportion="0.10119048">
+        <state line="117" column="48" selection-start="4215" selection-end="4215" vertical-scroll-proportion="0.524">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager/LogManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="51" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.7083333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager/DownloadManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="27" selection-start="7163" selection-end="7163" vertical-scroll-proportion="2.1532164">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugin.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="38" selection-end="38" vertical-scroll-proportion="0.01988304" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager/ConfigManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="45" selection-start="6065" selection-end="6065" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Implementation/OpenSubtitlesOrgHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="25" selection-start="10394" selection-end="10394" vertical-scroll-proportion="0.0">
+        <state line="307" column="196" selection-start="12244" selection-end="12244" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="method#getCodeLanguage#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#validarRespStatus#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#executeRpcMethod#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#getDescription#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#getSiteUrl#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#getHandlerVOType#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
             <element signature="method#getSupportedLanguages#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#doLogin#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#getSubTitleList#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#getSubTitleFile#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
+            <element signature="method#doLogout#0;class#OpenSubtitlesOrgHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,6 +899,34 @@
     <entry file="file://$PROJECT_DIR$/archive_projects/VuzeLegendasBaixator.jarprj">
       <provider selected="true" editor-type-id="jarprj">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/DownloadManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.29590017">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Lib/lambdaj-2.1-with-dependencies.jar!/ch/lambdaj/Lambda.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="25" selection-start="154" selection-end="160" vertical-scroll-proportion="0.13051823">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/Core.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="52" selection-start="607" selection-end="607" vertical-scroll-proportion="0.36363637">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/LogManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="34" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.42124543">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

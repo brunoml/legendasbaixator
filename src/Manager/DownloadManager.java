@@ -124,6 +124,8 @@ public class DownloadManager {
         if (anyWasOk)
             for (MovieFileVO movie : listaMovies)
                 _log.NoSubTitle(movie.getFileName(), movie.getTorrentName());
+
+        _log.FinishAllDownloads();
     }
 
     private void downloadSubTitles(List<MovieFileVO> listaMovies, IDownloadHandler downloadHandler, DownloadHandlerVO handlerVO) throws Exception {

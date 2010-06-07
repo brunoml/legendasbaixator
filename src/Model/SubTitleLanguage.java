@@ -75,8 +75,10 @@ public enum SubTitleLanguage {
     cs_CZ,
     @Description("Danish – Denmark")
     da_DK,
-    @Description("Dutch – Belgium")
+    @Description("Dutch – Nederlands")
     nl_NL,
+    @Description("Dutch – Belgium")
+    nl_BE,
     @Description("Estonian – Estonia")
     et_EE,
     @Description("Finnish – Finland")

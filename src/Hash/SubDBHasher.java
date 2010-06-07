@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.LongBuffer;
@@ -24,20 +25,19 @@ public class SubDBHasher {
     private static final int HASH_CHUNK_SIZE = 64 * 1024;
 
     public static String computeHash(File file) {
-        long size = file.length();
-        long chunkSizeForFile = Math.min(HASH_CHUNK_SIZE, size);
+        byte[] head = new byte[HASH_CHUNK_SIZE];
+        byte[] tail = new byte[HASH_CHUNK_SIZE];
 
         try {
-            FileChannel fileChannel = new FileInputStream(file).getChannel();
-            try {
-                long head = computeHashForChunk(fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, chunkSizeForFile));
-                long tail = computeHashForChunk(fileChannel.map(FileChannel.MapMode.READ_ONLY, Math.max(size - HASH_CHUNK_SIZE, 0), chunkSizeForFile));
+            RandomAccessFile randomFile = new RandomAccessFile(file, "r");
+            randomFile.read(head);
+            randomFile.seek(randomFile.length() - HASH_CHUNK_SIZE);
+            randomFile.read(tail);
 
-                MessageDigest md5 = MessageDigest.getInstance("MD5");
-                return stringHexa(md5.digest(String.valueOf(head + tail).getBytes()));
-            } finally {
-                fileChannel.close();
-            }
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            md5.update(head);
+            md5.update(tail);
+            return stringHexa(md5.digest());
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);
         }
@@ -52,17 +52,5 @@ public class SubDBHasher {
            s.append(Integer.toHexString(parteAlta | parteBaixa));
        }
        return s.toString();
-    }
-
-    private static long computeHashForChunk(ByteBuffer buffer) {
-
-        LongBuffer longBuffer = buffer.order(ByteOrder.LITTLE_ENDIAN).asLongBuffer();
-        long hash = 0;
-
-        while (longBuffer.hasRemaining()) {
-            hash += longBuffer.get();
-        }
-
-        return hash;
     }
 }

@@ -1,5 +1,6 @@
 package Implementation;
 
+import Hash.OpenSubtitlesHasher;
 import Hash.SubDBHasher;
 import Interface.IDownloadHandler;
 import Manager.Core;
@@ -8,12 +9,14 @@ import Utils.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.lf5.util.StreamUtils;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -30,9 +33,10 @@ import static ch.lambdaj.Lambda.selectMax;
  * To change this template use File | Settings | File Templates.
  */
 public class SubDBHandler implements IDownloadHandler {
+    private static final String _UserAgent = "SubDB/1.0 (" + Core.SYSTEM_NAME + "/" + Core.VERSION_NUMBER + "; " + Core.URL + ")";
+    private static final String _BaseUrl = "http://api.thesubdb.com/";
     private DefaultHttpClient httpclient = null;
     private DownloadHandlerVO _handlerVO = null;
-    private static final String _BaseUrl = "http://api.thesubdb.com/";
 
     private String getURLForDownload(String hash) {
         return _BaseUrl + "?action=download&language=" + getCodeLanguage() + "&hash=" + hash;
@@ -42,6 +46,7 @@ public class SubDBHandler implements IDownloadHandler {
         switch (_handlerVO.getLanguage()) {
             case pt_BR: return "pt";
             case en_US: return "en";
+            case nl_NL: return "nl";
             default: return null;
         }
     }
@@ -59,9 +64,10 @@ public class SubDBHandler implements IDownloadHandler {
     }
 
     public SubTitleLanguage[] getSupportedLanguages() {
-        SubTitleLanguage[] langs = new SubTitleLanguage[2];
-        langs[0] = SubTitleLanguage.en_US;
-        langs[1] = SubTitleLanguage.pt_BR;
+        SubTitleLanguage[] langs = new SubTitleLanguage[3];
+        langs[0] = SubTitleLanguage.pt_BR;
+        langs[1] = SubTitleLanguage.en_US;
+        langs[2] = SubTitleLanguage.nl_NL;
         return langs;
     }
 
@@ -72,25 +78,34 @@ public class SubDBHandler implements IDownloadHandler {
     }
 
     public List<SubTitleVO> getSubTitleList(MovieFileVO movieFile) {
-        String hash = SubDBHasher.computeHash(movieFile.getFile());
-        HttpPost httpost = new HttpPost(getURLForDownload(hash));
-        httpost.addHeader("User-Agent", Core.USER_AGENT);
+        String movieHash = SubDBHasher.computeHash(movieFile.getFile());
+        HttpGet httpGet = new HttpGet(getURLForDownload(movieHash));
+        httpGet.addHeader("User-Agent", _UserAgent);
         try {
-            HttpResponse response = httpclient.execute(httpost);
-
-            if (response.getStatusLine().getStatusCode() != 200) {
-                throw new RuntimeException("Status Response Error: " + response.getStatusLine());
-            }
-
-            HttpEntity ent = response.getEntity();
+            HttpResponse response = httpclient.execute(httpGet);
 
             List<SubTitleVO> subTitleList = new ArrayList<SubTitleVO>();
-            SubTitleVO subTitle = new SubTitleVO();
-            subTitle.setID(hash);
-            subTitle.setFileName(response.getFirstHeader("Content-Disposition").getValue());
-            subTitleList.add(subTitle);
 
-            ent.consumeContent();
+            if (response.getStatusLine().getStatusCode() == 200) {
+                HttpEntity ent = response.getEntity();
+
+                String contentDisp = response.getFirstHeader("Content-Disposition").getValue();
+                contentDisp = contentDisp.replace(" attachment; filename=", "");
+
+                InputStream entStream = ent.getContent();
+                
+                SubTitleVO subTitle = new SubTitleVO();
+                subTitle.setID(movieHash);
+                subTitle.setFileName(contentDisp);
+                // Deixo a legenda aqui já porque não tenho que pegar de novo depois
+                subTitle.setDescricao(FileUtils.InputToString(entStream, "ISO-8859-1"));
+                subTitleList.add(subTitle);
+
+                ent.consumeContent();
+            } else
+            if (response.getStatusLine().getStatusCode() != 404) {
+               throw new RuntimeException("Status Response Error: " + response.getStatusLine());
+            }
 
             return subTitleList;            
         } catch (IOException e) {
@@ -104,24 +119,7 @@ public class SubDBHandler implements IDownloadHandler {
     }
 
     public InputStream getSubTitleFile(SubTitleVO subTitleVO) {
-        HttpPost httpost = new HttpPost(getURLForDownload(subTitleVO.getID()));
-        httpost.addHeader("User-Agent", Core.USER_AGENT);
-        try {
-            HttpResponse response = httpclient.execute(httpost);
-
-            if (response.getStatusLine().getStatusCode() != 200) {
-                throw new RuntimeException("Status Response Error: " + response.getStatusLine());
-            }
-
-            HttpEntity ent = response.getEntity();
-            InputStream entStream = ent.getContent();
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(FileUtils.InputToByte(entStream));
-            ent.consumeContent();
-
-            return inputStream;
-        } catch (IOException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
+        return FileUtils.StringToInput(subTitleVO.getDescricao());
     }
 
     public void doLogout() {

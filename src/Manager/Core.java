@@ -1,5 +1,12 @@
 package Manager;
 
+import Implementation.OpenSubtitlesOrgHandler;
+import Model.DownloadHandlerException;
+import Model.DownloadHandlerVO;
+import Model.MovieFileVO;
+import Model.SubTitleLanguage;
+import Threads.DownloadAllThread;
+import Utils.FileUtils;
 import org.gudy.azureus2.plugins.PluginException;
 import org.gudy.azureus2.plugins.PluginInterface;
 import org.gudy.azureus2.plugins.UnloadablePlugin;
@@ -15,7 +22,7 @@ public class Core implements UnloadablePlugin {
 
     public static final String VERSION_NUMBER = "0.1";
     public static final String SYSTEM_NAME = "VuzeLegendasBaixator";
-    public static final String USER_AGENT = SYSTEM_NAME + " v" + VERSION_NUMBER; 
+    public static final String URL = "http://legendasbaixator.googlecode.com";
 
     public void unload() throws PluginException {
 

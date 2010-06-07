@@ -1,9 +1,16 @@
 package Manager;
 
+import Model.SubTitleVO;
 import Utils.FileUtils;
+import ch.lambdaj.Lambda;
 import org.gudy.azureus2.plugins.PluginInterface;
 import org.gudy.azureus2.plugins.logging.LoggerChannel;
 import org.gudy.azureus2.plugins.utils.LocaleUtilities;
+import org.hamcrest.Matchers;
+
+import static ch.lambdaj.Lambda.filter;
+import static ch.lambdaj.Lambda.having;
+import static ch.lambdaj.Lambda.on;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,20 +24,22 @@ public class LogManager {
     private LocaleUtilities _localeUtil;
 
     public LogManager(PluginInterface pluginInterface) {
-        _LoggerChannel = pluginInterface.getLogger().getChannel("LegendasBaixator");
+        _LoggerChannel = Lambda.selectFirst(pluginInterface.getLogger().getChannels(), having(on(LoggerChannel.class).getName(), Matchers.equalToIgnoringCase(Core.SYSTEM_NAME)));
+        if (_LoggerChannel == null)
+            _LoggerChannel = pluginInterface.getLogger().getChannel(Core.SYSTEM_NAME);
         _localeUtil = pluginInterface.getUtilities().getLocaleUtilities();
     }
 
     public void info(String value) {
-        _LoggerChannel.logAlert(LoggerChannel.LT_INFORMATION, value);
+        _LoggerChannel.logAlertRepeatable(LoggerChannel.LT_INFORMATION, value);
     }
 
     public void warning(String value) {
-        _LoggerChannel.logAlert(LoggerChannel.LT_WARNING, value);
+        _LoggerChannel.logAlertRepeatable(LoggerChannel.LT_WARNING, value);
     }
 
     public void error(String value) {
-        _LoggerChannel.logAlert(LoggerChannel.LT_ERROR, value);
+        _LoggerChannel.logAlertRepeatable(LoggerChannel.LT_ERROR, value);
     }
 
     public void fatal(String value, Throwable e) {
@@ -61,5 +70,9 @@ public class LogManager {
 
     public void InitiateAllDownloads() {
         info(_localeUtil.getLocalisedMessageText(ConfigManager.BaseName + ".InitiateAllDownloads", new String[]{}));
+    }
+
+    public void FinishAllDownloads() {
+        info(_localeUtil.getLocalisedMessageText(ConfigManager.BaseName + ".FinishAllDownloads", new String[]{}));
     }
 }
