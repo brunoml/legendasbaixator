@@ -102,6 +102,10 @@ public class FileUtils {
         }
     }
 
+    public static InputStream StringToInput(String value) {
+        return new ByteArrayInputStream(value.getBytes());
+    }
+
     public static byte[] InputToByte(InputStream inStream) {
         try {
             final byte[] buffer = new byte[0x10000];

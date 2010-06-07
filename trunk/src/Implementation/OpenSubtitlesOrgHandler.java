@@ -5,12 +5,16 @@ import Manager.Core;
 import Model.*;
 import Utils.FileUtils;
 import Hash.OpenSubtitlesHasher;
+import org.apache.http.client.HttpClient;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
+import org.apache.xmlrpc.client.XmlRpcCommonsTransportFactory;
 import org.hamcrest.Matchers;
 
 import java.io.*;
+import java.math.BigInteger;
+import java.net.Authenticator;
 import java.net.URL;
 import java.util.*;
 
@@ -25,6 +29,7 @@ import static ch.lambdaj.Lambda.on;
  * To change this template use File | Settings | File Templates.
  */
 public class OpenSubtitlesOrgHandler implements IDownloadHandler {
+    public static final String _UserAgent = Core.SYSTEM_NAME + " v" + Core.VERSION_NUMBER;
     private static final String _UrlXmlRpc = "http://api.opensubtitles.org/xml-rpc";
     private XmlRpcClient xmlRpcClient;
     private DownloadHandlerVO _handlerVO;
@@ -32,7 +37,7 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
 
     private String getCodeLanguage(SubTitleLanguage language) {
         switch (language) {
-            case pt_BR: return "pb";
+            case pt_BR: return "pob";
             case pt_PT: return "pt";
             case en_US: return "en";
             case es_ES: return "es";
@@ -65,6 +70,7 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
             case cs_CZ: return "cs";
             case da_DK: return "da";
             case nl_NL: return "nl";
+            case nl_BE: return "nl";
             case et_EE: return "et";
             case fi_FI: return "fi";            
             case fr_BE: return "fr";
@@ -119,14 +125,6 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
             throw new RuntimeException("Error on " + method + ": " + status);
     }
 
-    private Object executeRpcMethod(String method, Object[] params) {
-        try {
-            return xmlRpcClient.execute(method, params);
-        } catch (XmlRpcException e) {
-            throw new RuntimeException("Erro on calling method " + method, e);
-        }
-    }
-
     private Object executeRpcMethod(String method, List params) {
         try {
             return xmlRpcClient.execute(method, params);
@@ -136,7 +134,7 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
     }
 
     public String getDescription() {
-        return "OpenSubTitles.org";
+        return "OpenSubTitles";
     }
 
     public String getSiteUrl() {
@@ -148,7 +146,7 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
     }
 
     public SubTitleLanguage[] getSupportedLanguages() {
-        SubTitleLanguage[] langs = new SubTitleLanguage[78];
+        SubTitleLanguage[] langs = new SubTitleLanguage[79];
         langs[0] = SubTitleLanguage.pt_BR;
         langs[1] = SubTitleLanguage.pt_PT;
         langs[2] = SubTitleLanguage.en_US;
@@ -182,60 +180,66 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
         langs[30] = SubTitleLanguage.cs_CZ;
         langs[31] = SubTitleLanguage.da_DK;
         langs[32] = SubTitleLanguage.nl_NL;
-        langs[33] = SubTitleLanguage.et_EE;
-        langs[34] = SubTitleLanguage.fi_FI;
-        langs[35] = SubTitleLanguage.fr_BE;
-        langs[36] = SubTitleLanguage.fr_CA;
-        langs[37] = SubTitleLanguage.fr_CH;
-        langs[38] = SubTitleLanguage.fr_FR;
-        langs[39] = SubTitleLanguage.fr_LU;
-        langs[40] = SubTitleLanguage.fr_MC;
-        langs[41] = SubTitleLanguage.ka_GE;
-        langs[42] = SubTitleLanguage.de_DE;
-        langs[43] = SubTitleLanguage.de_AT;
-        langs[44] = SubTitleLanguage.de_CH;
-        langs[45] = SubTitleLanguage.de_LI;
-        langs[46] = SubTitleLanguage.de_LU;
-        langs[47] = SubTitleLanguage.gl_ES;
-        langs[48] = SubTitleLanguage.el_GR;
-        langs[49] = SubTitleLanguage.he_IL;
-        langs[50] = SubTitleLanguage.hr_HR;
-        langs[51] = SubTitleLanguage.hu_HU;
-        langs[52] = SubTitleLanguage.id_ID;
-        langs[53] = SubTitleLanguage.it_IT;
-        langs[54] = SubTitleLanguage.it_CH;
-        langs[55] = SubTitleLanguage.ja_JP;
-        langs[56] = SubTitleLanguage.ko_KR;
-        langs[57] = SubTitleLanguage.mk_MK;
-        langs[58] = SubTitleLanguage.ms_BN;
-        langs[59] = SubTitleLanguage.ms_MY;
-        langs[60] = SubTitleLanguage.nb_NO;
-        langs[61] = SubTitleLanguage.oc_FR;
-        langs[62] = SubTitleLanguage.oc_IT;
-        langs[63] = SubTitleLanguage.oc_ES;
-        langs[64] = SubTitleLanguage.oc_MC;
-        langs[65] = SubTitleLanguage.fa_IR;
-        langs[66] = SubTitleLanguage.pl_PL;
-        langs[67] = SubTitleLanguage.ru_RU;
-        langs[68] = SubTitleLanguage.sr_SP;
-        langs[69] = SubTitleLanguage.si_LK;
-        langs[70] = SubTitleLanguage.sk_SK;
-        langs[71] = SubTitleLanguage.sl_SI;
-        langs[72] = SubTitleLanguage.sv_SE;
-        langs[73] = SubTitleLanguage.sv_FI;
-        langs[74] = SubTitleLanguage.tr_TR;
-        langs[75] = SubTitleLanguage.uk_UA;
-        langs[76] = SubTitleLanguage.vi_VN;
-        langs[77] = SubTitleLanguage.ro_RO;
+        langs[33] = SubTitleLanguage.nl_BE;
+        langs[34] = SubTitleLanguage.et_EE;
+        langs[35] = SubTitleLanguage.fi_FI;
+        langs[36] = SubTitleLanguage.fr_BE;
+        langs[37] = SubTitleLanguage.fr_CA;
+        langs[38] = SubTitleLanguage.fr_CH;
+        langs[39] = SubTitleLanguage.fr_FR;
+        langs[40] = SubTitleLanguage.fr_LU;
+        langs[41] = SubTitleLanguage.fr_MC;
+        langs[42] = SubTitleLanguage.ka_GE;
+        langs[43] = SubTitleLanguage.de_DE;
+        langs[44] = SubTitleLanguage.de_AT;
+        langs[45] = SubTitleLanguage.de_CH;
+        langs[46] = SubTitleLanguage.de_LI;
+        langs[47] = SubTitleLanguage.de_LU;
+        langs[48] = SubTitleLanguage.gl_ES;
+        langs[49] = SubTitleLanguage.el_GR;
+        langs[50] = SubTitleLanguage.he_IL;
+        langs[51] = SubTitleLanguage.hr_HR;
+        langs[52] = SubTitleLanguage.hu_HU;
+        langs[53] = SubTitleLanguage.id_ID;
+        langs[54] = SubTitleLanguage.it_IT;
+        langs[55] = SubTitleLanguage.it_CH;
+        langs[56] = SubTitleLanguage.ja_JP;
+        langs[57] = SubTitleLanguage.ko_KR;
+        langs[58] = SubTitleLanguage.mk_MK;
+        langs[59] = SubTitleLanguage.ms_BN;
+        langs[60] = SubTitleLanguage.ms_MY;
+        langs[61] = SubTitleLanguage.nb_NO;
+        langs[62] = SubTitleLanguage.oc_FR;
+        langs[63] = SubTitleLanguage.oc_IT;
+        langs[64] = SubTitleLanguage.oc_ES;
+        langs[65] = SubTitleLanguage.oc_MC;
+        langs[66] = SubTitleLanguage.fa_IR;
+        langs[67] = SubTitleLanguage.pl_PL;
+        langs[68] = SubTitleLanguage.ru_RU;
+        langs[69] = SubTitleLanguage.sr_SP;
+        langs[70] = SubTitleLanguage.si_LK;
+        langs[71] = SubTitleLanguage.sk_SK;
+        langs[72] = SubTitleLanguage.sl_SI;
+        langs[73] = SubTitleLanguage.sv_SE;
+        langs[74] = SubTitleLanguage.sv_FI;
+        langs[75] = SubTitleLanguage.tr_TR;
+        langs[76] = SubTitleLanguage.uk_UA;
+        langs[77] = SubTitleLanguage.vi_VN;
+        langs[78] = SubTitleLanguage.ro_RO;
         return langs;
     }
 
     public void doLogin(DownloadHandlerVO handlerVO) throws DownloadHandlerException {
         try {
+            /* Proxy Configuration for XmlRpcConfig
+            Properties systemSettings = System.getProperties();
+            systemSettings.put("http.proxyHost","server");
+            systemSettings.put("http.proxyPort", "port");
+            */
             XmlRpcClientConfigImpl xmlRpcConfig = new XmlRpcClientConfigImpl();
             xmlRpcConfig.setServerURL(new URL(_UrlXmlRpc));
             xmlRpcConfig.setEnabledForExtensions(true);
-            xmlRpcConfig.setUserAgent(Core.USER_AGENT);
+            xmlRpcConfig.setUserAgent(_UserAgent);
             xmlRpcClient = new XmlRpcClient();
             xmlRpcClient.setConfig(xmlRpcConfig);
         } catch (Exception e) {
@@ -248,7 +252,7 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
         params.add(_handlerVO.getUserName());
         params.add(_handlerVO.getPassword());
         params.add(getCodeLanguage(_handlerVO.getLanguage()));
-        params.add(Core.USER_AGENT);
+        params.add(_UserAgent);
 
         Map resp = (Map)executeRpcMethod("LogIn", params);
 
@@ -257,16 +261,16 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
         _tokenConnection = (String)resp.get("token");
     }
 
-    @SuppressWarnings({"unchecked", "unsafe"})
     public List<SubTitleVO> getSubTitleList(MovieFileVO movieFile) {
         List<SubTitleVO> subTitleList = new ArrayList<SubTitleVO>();
 
         HashMap<String, Object> movieMap = new HashMap<String, Object>();
-        //movieMap.put("sublanguageid", getCodeLanguage(_handlerVO.getLanguage()));
-        movieMap.put("sublanguageid", "all");
+
+        movieMap.put("sublanguageid", getCodeLanguage(_handlerVO.getLanguage()));
         movieMap.put("moviehash", OpenSubtitlesHasher.computeHash(movieFile.getFile()));
         movieMap.put("moviebytesize", movieFile.getSize());
-        Vector<Serializable> params = new Vector<Serializable>();
+
+        Vector params = new Vector();
         params.add(_tokenConnection);
         params.add(new Object[] { movieMap });
 
@@ -277,16 +281,17 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
         if ((respData.getClass() == Boolean.class) && (!(Boolean)respData))
             return subTitleList;
 
-        Map[] subtitlesResp = (Map[])respData;
+        Object[] subtitlesResp = (Object[])respData;
 
-        for(Map subtitleResp : subtitlesResp) {
+        for(Object item : subtitlesResp) {
+            Map subtitleResp = (Map)item;
             SubTitleVO subTitleVO = new SubTitleVO();
             subTitleVO.setID((String)subtitleResp.get("IDSubtitleFile"));
             subTitleVO.setDescricao((String)subtitleResp.get("MovieName"));
             subTitleVO.setFileName((String)subtitleResp.get("SubFileName"));
             subTitleVO.setCds(Integer.parseInt((String)subtitleResp.get("SubSumCD")));
             subTitleVO.setDownloads(Integer.parseInt((String)subtitleResp.get("SubDownloadsCnt")));
-            subTitleVO.setMovieSize(Long.parseLong((String)subtitleResp.get("SubDownloadsCnt")));
+            subTitleVO.setMovieSize(Long.parseLong((String)subtitleResp.get("MovieByteSize")));
             subTitleVO.setRelease((String)subtitleResp.get("MovieReleaseName"));
             subTitleList.add(subTitleVO);
         }
@@ -311,22 +316,22 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
     public InputStream getSubTitleFile(SubTitleVO subTitleVO) {
         Vector params = new Vector();
         params.add(_tokenConnection);
-        params.add(new int[] { Integer.parseInt(subTitleVO.getID()) });
+        params.add(new Object[] { subTitleVO.getID() });
 
         Map resp = (Map)executeRpcMethod("DownloadSubtitles", params);
 
         validarRespStatus((String)resp.get("status"), "DownloadSubtitles");
 
-        Map[] subtitlesResp = (Map[])resp.get("data");
+        Object[] subtitlesResp = (Object[])resp.get("data");
 
         if (subtitlesResp.length == 0)
             throw new RuntimeException("No subtitles returned from server");
 
-        return FileUtils.inflateFromGZip(FileUtils.decodeBase64((String)subtitlesResp[0].get("data")));
+        return FileUtils.inflateFromGZip(FileUtils.decodeBase64((String)((Map)subtitlesResp[0]).get("data")));
     }
 
     public void doLogout() {
-        if (xmlRpcClient == null)
+        if ((xmlRpcClient == null) || (_tokenConnection == null))
             return;
 
         Vector<String> params = new Vector<String>();

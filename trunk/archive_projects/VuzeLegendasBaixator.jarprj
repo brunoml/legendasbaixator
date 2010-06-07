@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <JAR>
   <VERSION>0.1</VERSION>
-  <BUILD_NO>Build 0018</BUILD_NO>
+  <BUILD_NO>Build 0023</BUILD_NO>
   <ARCHIVE_NAME>VuzeLegendasBaixator.jar</ARCHIVE_NAME>
   <MASTER_BUILD_NO />
   <MODULE_BUILD_NO>build.number</MODULE_BUILD_NO>
@@ -18,8 +18,6 @@
   <CLASSES>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Hash\OpenSubtitlesHasher.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Hash\SubDBHasher.class</ELEMENT>
-    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\LegendasTVHandler$1.class</ELEMENT>
-    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\LegendasTVHandler.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\OpenSubtitlesOrgHandler$1.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\OpenSubtitlesOrgHandler.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Implementation\SubDBHandler$1.class</ELEMENT>
@@ -43,12 +41,10 @@
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Threads\DownloadAllThread.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Threads\DownloadThread.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$1.class</ELEMENT>
-    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$2.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$MovieExtensions.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils$SubTitleExtensions.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\FileUtils.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\TorrentUtils.class</ELEMENT>
-    <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\Utils\sevenZipByteInputStream.class</ELEMENT>
     <ELEMENT>$PROJECT_DIR$\src\config\plugins\VuzeLegendasBaixatorPlugin\plugin.properties</ELEMENT>
   </CLASSES>
   <LIBRARIES>
