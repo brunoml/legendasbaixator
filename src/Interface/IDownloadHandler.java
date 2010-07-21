@@ -13,9 +13,16 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface IDownloadHandler {
+    public enum LogonType {
+        None,
+        Optional,
+        Required
+    }
+
     String getDescription();
     String getSiteUrl();
     Class getHandlerVOType();
+    LogonType getLogonType();
     SubTitleLanguage[] getSupportedLanguages();
     void doLogin(DownloadHandlerVO handlerVO) throws DownloadHandlerException;
     List<SubTitleVO> getSubTitleList(MovieFileVO movieFile);
