@@ -1,5 +1,5 @@
+#summary Configuração e funcionamento em Português/Brasil.
 #labels Featured,Phase-Deploy
-#Configuração e funcionamento em Português/Brasil.
 
 = Introdução =
 
