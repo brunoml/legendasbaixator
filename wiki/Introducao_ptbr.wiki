@@ -43,3 +43,16 @@ AJP, ASF, ASX, AVCHD, AVI, BIK, BIX, BOX, CAM, DAT, DIVX, DMF, DV, VO, LC, FLI, 
 Um video é considerado com legenda quando, na mesma pasta existir um arquivo de mesmo nome em alguma das seguintes extensões:
 
 SRT, SUB, SMI, TXT, SSA, ASS, MPL
+
+= Versões =
+
+*0.2*
+{{{
+* Regex para excluir arquivos de busca
+* Retirados campos usuário/senha de sites que não necessitam de login
+}}}
+
+*0.1*
+{{{
+* Versão inicial
+}}}
