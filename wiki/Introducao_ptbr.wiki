@@ -13,6 +13,12 @@ Após a instalação do plugin, para iniciar o seu uso é muito simples basta at
 
 Após a ativação devem ser selecionados os sites em que a legenda será buscada, em qual idioma, em qual extensão/formato e configurar login e senha se necessário.
 
+== Salvar legenda com o mesmo do video ==
+
+Quando configurada a legenda será gravada com o mesmo nome do arquivo do video e com a extensão escolhida para o site.
+
+Quando a flag não estiver marcada a legenda será salva com o nome retornado pelo site, porém numa busca completa o video será considerado sem legenda.
+
 == Categorias ==
 
 Pode ser feito um filtro por categoria de torrent, assim os videos que não necessitam de legenda não entrarão na busca.
