@@ -1,9 +1,9 @@
 #labels Featured,Phase-Deploy
-#Configuração e instalação em Português/Brasil.
+#Configuração e funcionamento em Português/Brasil.
 
 = Introdução =
 
-O LegendasBaixator é um plugin do [http://www.vuze.com Vuze] para baixar a legenda de um filme automaticamente quando o download do torrent terminar e assim você não ter que procurar pela internet.
+O Legendas Baixator é um plugin do [http://www.vuze.com Vuze] para baixar a legenda de um filme automaticamente quando o download do torrent terminar e assim você não ter que procurar pela internet.
 
 = Configuração =
 
