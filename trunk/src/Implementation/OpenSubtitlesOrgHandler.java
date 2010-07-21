@@ -145,6 +145,10 @@ public class OpenSubtitlesOrgHandler implements IDownloadHandler {
         return DownloadHandlerVO.class;
     }
 
+    public LogonType getLogonType() {
+        return LogonType.Optional;
+    }
+
     public SubTitleLanguage[] getSupportedLanguages() {
         SubTitleLanguage[] langs = new SubTitleLanguage[79];
         langs[0] = SubTitleLanguage.pt_BR;

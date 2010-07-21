@@ -15,9 +15,12 @@ import org.hamcrest.Matchers;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static ch.lambdaj.Lambda.*;
 
@@ -60,9 +63,21 @@ public class DownloadManager {
                     if (naoTem)
                         listaMovies.remove(i);
                 }
-            //if ((categoryList != null) && (categoryList.length > 0))
-            //    listaMovies = filter(having(on(MovieFileVO.class).getCategory(), Matchers.hasItemInArray(categoryList)), listaMovies);
         }
+        // Tira o que estão de acordo com a Regex configurada
+        String excludeRegex = _config.getExcludeFilesRegex();
+        if ((excludeRegex != null) || (excludeRegex.trim().equals(""))) {
+            Pattern patternExcludeFiles = Pattern.compile(excludeRegex, Pattern.CASE_INSENSITIVE);
+
+            List<MovieFileVO> listaTemp = listaMovies;
+            listaMovies = new ArrayList<MovieFileVO>();
+
+            for (MovieFileVO movieVO : listaTemp) {
+                if (!patternExcludeFiles.matcher(movieVO.getFileName()).find())
+                    listaMovies.add(movieVO);
+            }
+        }
+        // Retorna a lista filtrada
         return listaMovies;
     }
 
@@ -149,19 +164,27 @@ public class DownloadManager {
 
                 _log.debug(String.format("%s: Downloading %s...", movieFileVO.getFileName(), chosenSubTitle.getRelease()));
 
-                InputStream subTitleStream = downloadHandler.getSubTitleFile(chosenSubTitle);
-
-                String subtitleFileName = chosenSubTitle.getFileName();
-                if (_config.getSubTitleWithMovieName()) {
-                    subtitleFileName = FileUtils.changeExtension(movieFileVO.getFileName(), FileUtils.getExtension(chosenSubTitle.getFileName()));
+                InputStream subTitleStream = null;
+                try {
+                    subTitleStream = downloadHandler.getSubTitleFile(chosenSubTitle);
+                } catch (Exception e) {
+                    _log.fatal(_localeUtil.getLocalisedMessageText(Core.SYSTEM_NAME + ".DownloadingSubtitleError",
+                        new String[]{chosenSubTitle.getFileName(), downloadHandler.getDescription(), e.getMessage()}), e);
                 }
-                File file = new File(movieFileVO.getPathDir(), subtitleFileName);
-                FileOutputStream stream = new FileOutputStream(file);
-                StreamUtils.copyThenClose(subTitleStream, stream);
 
-                _log.SavedSubTitle(subtitleFileName, movieFileVO.getFileName(), downloadHandler.getDescription());
+                if (subTitleStream != null) {
+                    String subtitleFileName = chosenSubTitle.getFileName();
+                    if (_config.getSubTitleWithMovieName()) {
+                        subtitleFileName = FileUtils.changeExtension(movieFileVO.getFileName(), FileUtils.getExtension(chosenSubTitle.getFileName()));
+                    }
+                    File file = new File(movieFileVO.getPathDir(), subtitleFileName);
+                    FileOutputStream stream = new FileOutputStream(file);
+                    StreamUtils.copyThenClose(subTitleStream, stream);
 
-                movieFileVO.setHasSubTitle(true);
+                    _log.SavedSubTitle(subtitleFileName, movieFileVO.getFileName(), downloadHandler.getDescription());
+
+                    movieFileVO.setHasSubTitle(true);
+                }
             }
         } catch (DownloadHandlerException e) {
             _log.warning(_localeUtil.getLocalisedMessageText(ConfigManager.BaseName + "." + e.getResource(), e.getArgs()));

@@ -44,6 +44,7 @@ public class ConfigManager {
     private static final String _CategoryList = "CategoryList";
     private static final String _CategoryAll = "CategoryAll";
     private static final String _CheckedFiles = "CheckedFiles";
+    private static final String _ExcludeFilesRegex = "ExcludeFilesRegex";
 
     public static void addLocalisedMessage(LocaleUtilities localeUtil, String name, String value) {
         Properties propsMsg = new Properties();
@@ -71,6 +72,10 @@ public class ConfigManager {
         System.arraycopy(checkedFiles, 0, newCheckedFiles, 0, checkedFiles.length);
         newCheckedFiles[newCheckedFiles.length-1] = checkedFile;
         setCheckedFiles(newCheckedFiles);
+    }
+
+    public String getExcludeFilesRegex() {
+        return pconfig.getPluginStringParameter(_ExcludeFilesRegex);
     }
 
     public HashMap<IDownloadHandler, DownloadHandlerVO> getDownloadHandlers() {
@@ -164,6 +169,7 @@ public class ConfigManager {
 
         cfg.addBooleanParameter2(_PluginActive, _BaseConfigName + "." + _PluginActive, false);
         cfg.addBooleanParameter2(_SubTitleWithMovieName, _BaseConfigName + "." + _SubTitleWithMovieName, true);
+        cfg.addStringParameter2(_ExcludeFilesRegex, _BaseConfigName + "." + _ExcludeFilesRegex, "");
 
         // Configuração dosHandlers
         final List<IDownloadHandler> handlersList = getExistingHandlers();
@@ -191,7 +197,11 @@ public class ConfigManager {
                         Class<?> typeParam = metodo.getParameterTypes()[0];
                         String nomeProp = metodo.getName().substring(3);
                         String nomePropPlugin = handler.getClass().getSimpleName() + "." + nomeProp;
-                        String resourceMessage = _BaseConfigName + "." + handlerVO.getClass().getSimpleName() + "." + nomeProp; 
+                        String resourceMessage = _BaseConfigName + "." + handlerVO.getClass().getSimpleName() + "." + nomeProp;
+
+                        if ((handler.getLogonType() == IDownloadHandler.LogonType.None) &
+                            ((metodo.getName().equals("setUserName")) || (metodo.getName().equals("setPassword"))))
+                            continue;
                         
                         if (typeParam == SubTitleLanguage.class) {
                             // Na lista de idiomas coloco só os que o Handler suporta

@@ -63,6 +63,10 @@ public class SubDBHandler implements IDownloadHandler {
         return DownloadHandlerVO.class;
     }
 
+    public LogonType getLogonType() {
+        return LogonType.None;
+    }
+
     public SubTitleLanguage[] getSupportedLanguages() {
         SubTitleLanguage[] langs = new SubTitleLanguage[3];
         langs[0] = SubTitleLanguage.pt_BR;
