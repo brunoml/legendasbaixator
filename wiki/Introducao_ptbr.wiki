@@ -21,6 +21,11 @@ Pode ser feito um filtro por categoria de torrent, assim os videos que não nece
 
 Na página de configuração pode ser feita uma busca de legendas para todos os videos que estão baixados e ainda estão sem legendas, essa busca segue a mesma regra da busca individual.
 
+Os seguintes sites são suportados:
+
+[http://blog.thesubdb.com http://30.media.tumblr.com/avatar_9259f7abc816_128.png]
+[http://www.opensubtitles.org http://static.opensubtitles.org/gfx/logo-transparent.png]
+
 == Excluir arquivos da busca - regex ==
 
 É possível configurar um regex para excluir arquivos da busca, tudo o que bater com o regex será excluído da busca por legendas.
