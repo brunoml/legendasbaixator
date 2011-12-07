@@ -20,10 +20,7 @@ import org.gudy.azureus2.plugins.ui.model.BasicPluginConfigModel;
 import org.gudy.azureus2.plugins.utils.LocaleUtilities;
 
 import java.lang.reflect.Method;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 
 /**
@@ -278,21 +275,19 @@ public class ConfigManager implements IConfigManager {
     }
 
     public static String[] getExistingCategories(PluginInterface pluginInterface) {
+        List<String> categories = new ArrayList<String>();
         Download[] torrents = pluginInterface.getDownloadManager().getDownloads();
-        String categorias = "";
         TorrentAttribute ta = TorrentUtils.getCategoryAttr(pluginInterface);
         for (Download torrent : torrents) {
-            String categoria = torrent.getAttribute(ta);
-            if (categoria == null)
+            String category = torrent.getAttribute(ta);
+            if (category == null)
                 continue;
-            if ((!categoria.equalsIgnoreCase("")) && (categorias.indexOf(categoria) < 0))
-                categorias += categoria + ";";
+            if (!TorrentUtils.hasMovieFile(torrent))
+                continue;
+            if ((!category.isEmpty()) && (categories.indexOf(category) == -1))
+                categories.add(category);
         }
-        // Retiro o último caractere que será sempre ";"
-        if (categorias.indexOf(";") > 0)
-            return categorias.substring(0, categorias.length() - 1).split(";");
-        else
-            return new String[0];
+        return categories.toArray(new String[0]);
     }
 
     public boolean getPluginActive() {
