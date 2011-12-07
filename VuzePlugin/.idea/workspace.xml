@@ -39,86 +39,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="c3040be4-9fb9-4459-972d-1bc7d98c1bfb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/copyright" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/libraries" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Exception" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Manager" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Model" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/ant.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/libraries/Lib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/Core.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Exception/DownloadHandlerException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Implementation/LegendasTVHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Interface/IConfigManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Interface/ILogManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Manager/SubTitleManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Model/CodeISO639_1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Model/CodeISO639_2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Model/CodeSufix.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Model/SystemInformation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Core/src/Utils/sevenZipByteInputStream.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/VuzePlugin_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/AzureusLib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Lib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/VuzePlugin.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Messages/Messages_eu.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Model/TorrentVO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Threads/DownloadPeriodThread.java" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\Core\build.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\Core\src\Model\DownloadHandlerException.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\build.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\manifest.mf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\plugin.properties" afterPath="" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\src\Manager\Core.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\Core\nbproject" afterPath="" />
-      <change type="DELETED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\nbproject" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core" afterPath="$PROJECT_DIR$/../Core" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$" afterPath="$PROJECT_DIR$" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Implementation/Addic7edHandler.java" afterPath="$PROJECT_DIR$/../Core/src/Implementation/Addic7edHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Implementation/OpenSubtitlesOrgHandler.java" afterPath="$PROJECT_DIR$/../Core/src/Implementation/OpenSubtitlesOrgHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Implementation/SubDBHandler.java" afterPath="$PROJECT_DIR$/../Core/src/Implementation/SubDBHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Interface/IDownloadHandler.java" afterPath="$PROJECT_DIR$/../Core/src/Interface/IDownloadHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Model/SubTitleLanguage.java" afterPath="$PROJECT_DIR$/../Core/src/Model/SubTitleLanguage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Model/VideoFileVO.java" afterPath="$PROJECT_DIR$/../Core/src/Model/VideoFileVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Utils/FileUtils.java" afterPath="$PROJECT_DIR$/../Core/src/Utils/FileUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Core/src/Utils/VoUtils.java" afterPath="$PROJECT_DIR$/../Core/src/Utils/VoUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Messages.properties" afterPath="$PROJECT_DIR$/src/Messages/Messages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Messages_pt_BR.properties" afterPath="$PROJECT_DIR$/src/Messages/Messages_pt_BR.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Threads/DownloadAllThread.java" afterPath="$PROJECT_DIR$/src/Threads/DownloadAllThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Threads/DownloadThread.java" afterPath="$PROJECT_DIR$/src/Threads/DownloadThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/TorrentUtils.java" afterPath="$PROJECT_DIR$/src/Utils/TorrentUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugin.properties" afterPath="$PROJECT_DIR$/src/plugin.properties" />
-      <change type="MOVED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\src\TorrentManager\ConfigManager.java" afterPath="$PROJECT_DIR$/src/Manager/ConfigManager.java" />
-      <change type="MOVED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\src\TorrentManager\Core.java" afterPath="$PROJECT_DIR$/src/Main/Core.java" />
-      <change type="MOVED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\src\TorrentManager\DownloadManager.java" afterPath="$PROJECT_DIR$/src/Manager/DownloadManager.java" />
-      <change type="MOVED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\src\TorrentManager\LogManager.java" afterPath="$PROJECT_DIR$/src/Manager/LogManager.java" />
-      <change type="MOVED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\src\TorrentManager\TorrentListener.java" afterPath="$PROJECT_DIR$/src/Manager/TorrentListener.java" />
-      <change type="MOVED" beforePath="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\src\TorrentManager" afterPath="$PROJECT_DIR$/src/Manager" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="VuzePlugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -181,9 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/Manager/DownloadManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="218" column="44" selection-start="8953" selection-end="8953" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,7 +128,7 @@
       <file leaf-file-name="SubTitleLanguage.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Core/src/Model/SubTitleLanguage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="746" column="27" selection-start="16150" selection-end="16150" vertical-scroll-proportion="0.39177102">
+            <state line="761" column="35" selection-start="16498" selection-end="16498" vertical-scroll-proportion="0.48658317">
               <folding />
             </state>
           </provider>
@@ -295,7 +214,6 @@
     <panes>
       <pane id="Favorites" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -392,80 +310,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VuzePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VuzePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VuzePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Implementation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VuzePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Exception" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,13 +330,13 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="Downloaded.Files.Path" value="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\lib" />
     <property name="dynamic.classpath" value="false" />
+    <property name="Downloaded.Files.Path" value="D:\Desenvolvimento\legendasbaixator.IntelliJ\VuzePlugin\lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -686,12 +533,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JavaRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29438716" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -710,6 +556,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -828,9 +675,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="1897" selection-end="1976" vertical-scroll-proportion="0.7884972">
-          <folding />
-        </state>
+        <state line="25" column="0" selection-start="1897" selection-end="1976" vertical-scroll-proportion="0.7884972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Messages_pt_BR.properties">
@@ -838,9 +683,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="68" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.75695735">
-          <folding />
-        </state>
+        <state line="24" column="68" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.75695735" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/TorrentVO.java">
@@ -875,6 +718,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/LogManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="178" selection-start="910" selection-end="1056" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/DownloadManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="44" selection-start="8953" selection-end="8953" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Core/src/Manager/SubTitleManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="51" selection-start="2446" selection-end="2446" vertical-scroll-proportion="0.0">
@@ -889,22 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager/DownloadManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="44" selection-start="8953" selection-end="8953" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager/LogManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="178" selection-start="910" selection-end="1056" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Core/src/Utils/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="63" selection-start="2842" selection-end="2842" vertical-scroll-proportion="0.0">
@@ -914,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Core/src/Model/SubTitleLanguage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="746" column="27" selection-start="16150" selection-end="16150" vertical-scroll-proportion="0.39177102">
+        <state line="761" column="35" selection-start="16498" selection-end="16498" vertical-scroll-proportion="0.48658317">
           <folding />
         </state>
       </provider>
