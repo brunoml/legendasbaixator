@@ -27,14 +27,6 @@ public class VideoFileVO {
         _pathDir = value;
     }
 
-    private String _category;
-    public String getCategory() {
-        return _category;
-    }
-    public void setCategory(String value) {
-        _category = value;
-    }
-
     private long _size;
     public long getSize() {
         return _size;
@@ -51,14 +43,6 @@ public class VideoFileVO {
         _hasSubTitle = value;
     }
 
-    private String _torrentName;
-    public String getTorrentName() {
-        return _torrentName;
-    }
-    public void setTorrentName(String value) {
-        _torrentName = value;
-    }
-
     private File _file;
     public File getFile() {
         return _file;
@@ -73,5 +57,13 @@ public class VideoFileVO {
     }
     public void setIsTvShow(Boolean value) {
         _isTvShow = value;
+    }
+
+    private SubTitleVO _subTitleVO;
+    public SubTitleVO getSubTitleVO() {
+        return _subTitleVO;
+    }
+    public void setSubTitleVO(SubTitleVO value) {
+        _subTitleVO = value;
     }
 }

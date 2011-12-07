@@ -1,28 +1,24 @@
 package Threads;
 
-import TorrentManager.DownloadManager;
-import Model.VideoFileVO;
+import Model.TorrentVO;
+import Manager.DownloadManager;
 import org.gudy.azureus2.plugins.PluginInterface;
 
-import java.util.List;
-
 /**
- * Created by IntelliJ IDEA.
- * User: Brunol
- * Date: 07/05/2010
- * Time: 09:39:38
- * To change this template use File | Settings | File Templates.
+ * @author Bruno
+ * Thread que faz o download da legenda quando um Torrent termina
  */
 public class DownloadThread extends BaseThread implements Runnable {
-    private List<VideoFileVO> _listaMovie = null;
+    private TorrentVO _torrentVO = null;
 
-    public DownloadThread(PluginInterface pluginInterface, List<VideoFileVO> listaMovie) {
+    public DownloadThread(PluginInterface pluginInterface, TorrentVO torrentVO) {
         super(pluginInterface);
-        _listaMovie = listaMovie;
+        _torrentVO = torrentVO;
     }
 
+    @Override
     public void run() {
         DownloadManager manager = new DownloadManager(_pluginInterface);
-        manager.getSubTileForMovie(_listaMovie);
+        manager.getSubTileForTorrent(_torrentVO);
     }
 }

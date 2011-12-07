@@ -1,17 +1,20 @@
 package Utils;
 
+import Manager.ConfigManager;
+import Model.SubTitleLanguage;
+import Model.TorrentVO;
 import Model.VideoFileVO;
-import Utils.FileUtils;
 import org.gudy.azureus2.plugins.PluginInterface;
 import org.gudy.azureus2.plugins.disk.DiskManagerFileInfo;
 import org.gudy.azureus2.plugins.download.Download;
 import org.gudy.azureus2.plugins.torrent.TorrentAttribute;
-import static ch.lambdaj.Lambda.*;
 import org.hamcrest.Matchers;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import static ch.lambdaj.Lambda.*;
 
 
 /**
@@ -27,52 +30,56 @@ public class TorrentUtils {
         return pluginInterface.getTorrentManager().getAttribute(TorrentAttribute.TA_CATEGORY);
     }
 
-    public static List<VideoFileVO> getMovieFiles(PluginInterface pluginInterface) {
-        List<VideoFileVO> listaMovies = new ArrayList<VideoFileVO>();
-        // Filtra somente os que est„o completos
+    public static List<TorrentVO> getMovieTorrents(PluginInterface pluginInterface) {
+        List<TorrentVO> listaTorrentVO = new ArrayList<TorrentVO>();
+        // Filtra somente os que est√£o completos
         List<Download> listaTorrent = filter(having(on(Download.class).isComplete(), Matchers.equalTo(true)), pluginInterface.getDownloadManager().getDownloads());
-        // Pega somente o que È Video
-        listaTorrent = filter(having(FileUtils.isMovieFile(on(Download.class).getName()), Matchers.equalTo(true)), listaTorrent);
-
+        // Pega somente o que tem Video
         for (Download item : listaTorrent) {
-            listaMovies.addAll(torrentMovieToMovieFileVO(item, pluginInterface));
+            TorrentVO torrentVO = torrentMovieToTorrentVO(item, pluginInterface);
+            if (torrentVO != null)
+                listaTorrentVO.add(torrentMovieToTorrentVO(item, pluginInterface));
         }
-        return listaMovies;
+        return listaTorrentVO;
     }
 
-    public static VideoFileVO torrentMovieToMovieFileVO(DiskManagerFileInfo fileInfo, PluginInterface pluginInterface) {
-        try {
-            File diskFile = fileInfo.getFile();
-            VideoFileVO movieFileVO = new VideoFileVO();
-            movieFileVO.setFileName(diskFile.getName());
-            movieFileVO.setPathDir(FileUtils.getPathWithoutFileName(diskFile.getPath()));
-            movieFileVO.setCategory(fileInfo.getDownload().getAttribute(getCategoryAttr(pluginInterface)));
-            movieFileVO.setHasSubTitle(FileUtils.hasSubTitleFile(movieFileVO.getPathDir(), movieFileVO.getFileName()));
-            movieFileVO.setSize(diskFile.length());
-            movieFileVO.setTorrentName(fileInfo.getDownload().getTorrent().getName());
-            movieFileVO.setFile(fileInfo.getFile());
-            return movieFileVO;
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-    }
-
-    public static List<VideoFileVO> torrentMovieToMovieFileVO(Download download, PluginInterface pluginInterface) {
+    public static TorrentVO torrentMovieToTorrentVO(Download download, PluginInterface pluginInterface) {
         List<VideoFileVO> movieList = new ArrayList<VideoFileVO>();
-        for (DiskManagerFileInfo fileTorrent : download.getDiskManagerFileInfo())
+        if (!hasMovieFile(download))
+            return null;
+
+        // if we use the language name on subtitle file name
+        ConfigManager config = new ConfigManager(pluginInterface);
+        SubTitleLanguage subTitleLanguage = null;
+        if (config.getUseLanguageOnSubtitle())
+            subTitleLanguage = config.getLanguageOnSubtitle();
+
+        for (DiskManagerFileInfo fileTorrent : download.getDiskManagerFileInfo()) {
             if ((!fileTorrent.isSkipped()) && (!fileTorrent.isDeleted()) && (FileUtils.isMovieFile(fileTorrent.getFile().getName()))) {
-                VideoFileVO movieVO = torrentMovieToMovieFileVO(fileTorrent, pluginInterface);
+                VideoFileVO movieVO = VoUtils.fileToMovieVO(fileTorrent.getFile(), subTitleLanguage);
                 movieList.add(movieVO);
             }
-        return movieList;
+        }
+        TorrentVO torrentVO = new TorrentVO();
+        torrentVO.setCategory(download.getAttribute(getCategoryAttr(pluginInterface)));
+        torrentVO.setTorrentName(download.getTorrent().getName());
+        torrentVO.setVideoFileList(movieList);
+        return torrentVO;
     }
 
     public static boolean hasMovieFile(Download download) {
         DiskManagerFileInfo[] filesTorrent = download.getDiskManagerFileInfo();
-        for (DiskManagerFileInfo fileTorrent : filesTorrent)
-            if ((!fileTorrent.isSkipped()) && (!fileTorrent.isDeleted()) && (FileUtils.isMovieFile(fileTorrent.getFile().getName()))) {
+        for (DiskManagerFileInfo fileTorrent : filesTorrent) {
+            if (fileTorrent == null)
+                continue;
+            File file = fileTorrent.getFile();
+            if (file == null)
+                continue;
+            if (fileTorrent.isSkipped() || fileTorrent.isDeleted())
+                continue;
+            if (FileUtils.isMovieFile(file.getName()))
                 return true;
-            }
+        }
         return false;
     }
 }

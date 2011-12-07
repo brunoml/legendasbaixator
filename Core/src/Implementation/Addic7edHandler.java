@@ -5,28 +5,29 @@
 
 package Implementation;
 
+import Exception.DownloadHandlerException;
 import Interface.IDownloadHandler;
-import Model.DownloadHandlerException;
-import Model.DownloadHandlerVO;
-import Model.VideoFileVO;
-import Model.SubTitleLanguage;
-import Model.SubTitleVO;
+import Interface.ILogManager;
+import Model.*;
+import Utils.FileUtils;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import java.io.InputStream;
 import java.util.List;
-import org.apache.http.impl.client.DefaultHttpClient;
 
 /**
  *
  * @author Brunol
  */
 public class Addic7edHandler implements IDownloadHandler {
-    private static final String _UserAgent = "SubDB/1.0 (" + SYSTEM_NAME + "/" + VERSION_NUMBER + "; " + URL + ")";
+    private String _UserAgent = null;
     private static final String _BaseUrl = "http://api.thesubdb.com/";
     private DefaultHttpClient httpclient = null;
     private DownloadHandlerVO _handlerVO = null;
 
     private String getCodeLanguage() {
         switch (_handlerVO.getLanguage()) {
+            /*
             case pt_BR: return "pt-br";
             case en_US: return "en";
             case it_IT: return "it";
@@ -45,8 +46,17 @@ public class Addic7edHandler implements IDownloadHandler {
             case cs_CZ: return "cs";
             case nl_NL: return "nl";
             case hu_HU: return "hu";
+            */
             default: return null;
         }
+    }
+
+    public void setSystemInformation(SystemInformation systemInformation) {
+
+    }
+
+    public void setLogManager(ILogManager logManager) {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public String getDescription() {
@@ -67,7 +77,7 @@ public class Addic7edHandler implements IDownloadHandler {
 
     public SubTitleLanguage[] getSupportedLanguages() {
         SubTitleLanguage[] langs = new SubTitleLanguage[3];
-        langs[0] = SubTitleLanguage.pt_BR;
+        /*langs[0] = SubTitleLanguage.pt_BR;
         langs[1] = SubTitleLanguage.en_US;
         langs[2] = SubTitleLanguage.it_IT;
         langs[3] = SubTitleLanguage.ro_RO;
@@ -85,7 +95,12 @@ public class Addic7edHandler implements IDownloadHandler {
         langs[15] = SubTitleLanguage.cs_CZ;
         langs[16] = SubTitleLanguage.nl_NL;
         langs[17] = SubTitleLanguage.hu_HU;
+        */
         return langs;
+    }
+
+    public FileUtils.SubTitleExtensions[] getSupportedSubTitleExtensions() {
+        return new FileUtils.SubTitleExtensions[0];
     }
 
     public void doLogin(DownloadHandlerVO handlerVO) throws DownloadHandlerException {
