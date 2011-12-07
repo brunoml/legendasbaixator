@@ -1,18 +1,17 @@
 package Utils;
 
-/*
+import Model.SubTitleLanguage;
 import net.sf.sevenzipjbinding.ISequentialOutStream;
 import net.sf.sevenzipjbinding.ISevenZipInArchive;
 import net.sf.sevenzipjbinding.SevenZip;
 import net.sf.sevenzipjbinding.SevenZipException;
-import net.sf.sevenzipjbinding.impl.RandomAccessFileInStream;
-import net.sf.sevenzipjbinding.impl.SequentialInStreamImpl;
 import net.sf.sevenzipjbinding.simple.ISimpleInArchive;
 import net.sf.sevenzipjbinding.simple.ISimpleInArchiveItem;
-*/
 import org.apache.commons.codec.binary.Base64;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -48,11 +47,22 @@ public class FileUtils {
         }
     }
 
-    public static boolean hasSubTitleFile(String pathDir, final String fileName) {
+    public static boolean hasSubTitleFile(String pathDir, final String fileName, final SubTitleLanguage subTitleLanguage) {
+        final String[] sufixList = SubTitleLanguage.getCodeSufix(subTitleLanguage);
         File dirFiles = new File(pathDir);
         final File[] files = dirFiles.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return !fileName.equals(name) && (isSubTitleFile(name)) && getFileNameWithoutExtension(fileName).equalsIgnoreCase(getFileNameWithoutExtension(name));
+                    boolean found = !fileName.equals(name) && (isSubTitleFile(name)) &&
+                            getFileNameWithoutExtension(fileName).equalsIgnoreCase(getFileNameWithoutExtension(name));
+                    if ((!found) && (subTitleLanguage != null)) {
+                        for (String sufix : sufixList) {
+                            String fileNameSubtitle = getFileNameWithoutExtension(fileName) + "." + sufix;
+                            found = fileNameSubtitle.equalsIgnoreCase(getFileNameWithoutExtension(name));
+                            if (found)
+                                break;
+                        }
+                    }
+                    return found;
                 }
         });
         return (files != null) && (files.length > 0);
@@ -131,7 +141,7 @@ public class FileUtils {
             throw new RuntimeException("Error converting InputStream to Bytes: " + e.getMessage(), e);
         }
     }
-    /*
+
     public static Map<String, InputStream> DecompressRar(InputStream inStream) {
         try {
             final Map<String, InputStream> mapFiles = new HashMap<String, InputStream>();
@@ -151,7 +161,7 @@ public class FileUtils {
             throw new RuntimeException("Error decompressing RAR: " + e.getMessage(), e);
         }
     }
-    */
+
     public static byte[] decodeBase64(String contentBase64) {
         return Base64.decodeBase64(contentBase64.getBytes());
     }

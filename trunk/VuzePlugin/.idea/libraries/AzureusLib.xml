@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="AzureusLib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AzureusLib/swt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AzureusLib/Vuze_4700_pluginapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AzureusLib/Vuze_4700.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

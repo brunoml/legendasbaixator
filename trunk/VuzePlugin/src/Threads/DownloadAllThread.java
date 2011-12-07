@@ -1,14 +1,12 @@
 package Threads;
 
-import TorrentManager.DownloadManager;
+import Manager.DownloadManager;
 import org.gudy.azureus2.plugins.PluginInterface;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Brunol
- * Date: 07/05/2010
- * Time: 09:41:04
- * To change this template use File | Settings | File Templates.
+ * @author Bruno
+ * Thread que busca legenda para todos os torrent finalizados ainda sem
+ * legendas, disparada pela página de Configuração
  */
 public class DownloadAllThread extends BaseThread implements Runnable {
 
@@ -16,8 +14,9 @@ public class DownloadAllThread extends BaseThread implements Runnable {
         super(pluginInterface);
     }
 
+    @Override
     public void run() {
         DownloadManager manager = new DownloadManager(_pluginInterface);
-        manager.getSubTitleForAllCompletedMovies();
+        manager.getSubTitleForAllCompletedMovies(true);
     }
 }
